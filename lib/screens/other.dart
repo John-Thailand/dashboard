@@ -10,13 +10,17 @@ class OtherScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Screen was clicked ${_counterController.counter.value} times"),
+          Center(
+              child: Text(
+                  "Screen was clicked ${_counterController.counter.value} times")),
           const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Get.back();
-            },
-            child: const Text("Open Other Screen"),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Get.back();
+              },
+              child: const Text("Open Other Screen"),
+            ),
           ),
         ],
       ),
