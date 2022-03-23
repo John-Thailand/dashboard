@@ -8,7 +8,7 @@ class SmallScreen extends StatelessWidget {
     return Container(
       // Creates box constraints that expand to fill another box constraints.
       //// If width or height is given, the constraints will require exactly the given value in the given dimension.
-      constraints: BoxConstraints.expand(),
+      constraints: const BoxConstraints.expand(),
       color: Colors.green,
     );
   }
