@@ -7,19 +7,20 @@ class SideMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        DrawerHeader(
-          child: Column(
-            children: [
-              UserAccountsDrawerHeader(
-                accountName: Text("User Name"),
-                accountEmail: Text("User Email"),
-                currentAccountPicture: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  backgroundImage: NetworkImage(
-                      "https://pbs.twimg.com/profile_images/885510796691689473/rR9aWvBQ_400x400.jpg"),
-                ),
+        // Solution: ContainerによってDrawerHeaderの高さを設定
+        Container(
+          height: 216,
+          color: Colors.blue,
+          child: DrawerHeader(
+            child: UserAccountsDrawerHeader(
+              accountName: Text("User Name"),
+              accountEmail: Text("User Email"),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                backgroundImage: NetworkImage(
+                    "https://pbs.twimg.com/profile_images/885510796691689473/rR9aWvBQ_400x400.jpg"),
               ),
-            ],
+            ),
           ),
         ),
         ListTile(
