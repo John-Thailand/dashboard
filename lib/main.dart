@@ -1,12 +1,14 @@
-import 'package:dashboard/controllers/menu_controller.dart';
 import 'package:dashboard/layout.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
-  Get.put(MenuController());
-  runApp(MyApp());
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

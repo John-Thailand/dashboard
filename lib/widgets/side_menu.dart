@@ -1,10 +1,15 @@
+import 'package:dashboard/viewModels/user_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SideMenu extends StatelessWidget {
+class SideMenu extends HookConsumerWidget {
   const SideMenu({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // ユーザーの状態を管理する
+    final userState = ref.watch(userViewModel.notifier).state;
+
     return ListView(
       children: <Widget>[
         // Solution: ContainerによってDrawerHeaderの高さを設定
@@ -13,12 +18,11 @@ class SideMenu extends StatelessWidget {
           color: Colors.blue,
           child: DrawerHeader(
             child: UserAccountsDrawerHeader(
-              accountName: Text("User Name"),
-              accountEmail: Text("User Email"),
+              accountName: Text(userState.name),
+              accountEmail: Text(userState.email),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.white,
-                backgroundImage: NetworkImage(
-                    "https://pbs.twimg.com/profile_images/885510796691689473/rR9aWvBQ_400x400.jpg"),
+                backgroundImage: NetworkImage(userState.imageUrl),
               ),
             ),
           ),
