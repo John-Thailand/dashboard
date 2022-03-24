@@ -20,7 +20,7 @@ class SiteLayout extends HookConsumerWidget {
     return Scaffold(
         key: scaffoldKey,
         appBar: topNavigationBar(context, scaffoldKey, userState),
-        drawer: const Drawer(child: SideMenu()),
+        drawer: const Drawer(child: SideMenu(isDrawerMenu: true)),
         body: const ResponsiveWidget(
           largeScreen: LargeScreen(),
           smallScreen: SmallScreen(),
