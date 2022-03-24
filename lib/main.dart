@@ -1,11 +1,11 @@
-import 'package:dashboard/layout.dart';
+import 'package:dashboard/view/layout.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
   runApp(
-    ProviderScope(
+    const ProviderScope(
       child: MyApp(),
     ),
   );
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         // アプリの基本色になります。
         primaryColor: Colors.blue,
       ),
-      home: SiteLayout(),
+      home: const SiteLayout(),
     );
   }
 }

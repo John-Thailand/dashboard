@@ -1,4 +1,4 @@
-import 'package:dashboard/viewModels/user_view_model.dart';
+import 'package:dashboard/view_model/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

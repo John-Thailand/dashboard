@@ -1,6 +1,6 @@
-import 'package:dashboard/repositories/user_repository.dart';
+import 'package:dashboard/repository/user_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:dashboard/models/user.dart';
+import 'package:dashboard/model/user.dart';
 
 final userViewModel = StateNotifierProvider(
   (_) => UserViewModel(UserRepository()),
