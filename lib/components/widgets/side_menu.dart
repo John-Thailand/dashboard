@@ -1,3 +1,4 @@
+import 'package:dashboard/view/style.dart';
 import 'package:dashboard/view_model/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -18,11 +19,17 @@ class SideMenu extends HookConsumerWidget {
           color: Colors.blue,
           child: DrawerHeader(
             child: UserAccountsDrawerHeader(
-              accountName: Text(userState.name),
-              accountEmail: Text(userState.email),
+              accountName: Text(
+                userState.name,
+                style: TextStyles.sideMenuUserNameTextStyle,
+              ),
+              accountEmail: Text(
+                userState.email,
+                style: TextStyles.sideMenuUserEmailTextStyle,
+              ),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.white,
-                backgroundImage: NetworkImage(userState.imageUrl),
+                backgroundImage: AssetImage(userState.imageUrl),
               ),
             ),
           ),
@@ -30,11 +37,7 @@ class SideMenu extends HookConsumerWidget {
         ListTile(
           title: const Text(
             "Introduction",
-            style: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey,
-            ),
+            style: TextStyles.sideMenuItemTextStyle,
           ),
           leading: const Icon(Icons.person),
           onTap: () {
@@ -44,11 +47,7 @@ class SideMenu extends HookConsumerWidget {
         ListTile(
           title: const Text(
             "Blog",
-            style: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey,
-            ),
+            style: TextStyles.sideMenuItemTextStyle,
           ),
           leading: const Icon(Icons.chat),
           onTap: () {
@@ -58,11 +57,7 @@ class SideMenu extends HookConsumerWidget {
         ListTile(
           title: const Text(
             "Contact",
-            style: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey,
-            ),
+            style: TextStyles.sideMenuItemTextStyle,
           ),
           leading: const Icon(Icons.contact_mail),
           onTap: () {

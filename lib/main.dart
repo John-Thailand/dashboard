@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Dash",
+      title: "Dashboard",
       theme: ThemeData(
         // ScaffoldWidgetの背景色です。
         scaffoldBackgroundColor: Colors.white,

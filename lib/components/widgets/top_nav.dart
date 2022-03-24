@@ -1,10 +1,12 @@
-import 'package:dashboard/constants/style.dart';
 import 'package:dashboard/helpers/responsiveness.dart';
-import 'package:dashboard/components/widgets/custom_text.dart';
+import 'package:dashboard/model/user.dart';
+import 'package:dashboard/view/style.dart';
 import 'package:flutter/material.dart';
 
-AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
+AppBar topNavigationBar(
+        BuildContext context, GlobalKey<ScaffoldState> key, User userState) =>
     AppBar(
+      // 画面が大きい場合はロゴを表示し、そうでない場合はドロワーメニューを表示する
       leading: !ResponsiveWidget.isSmallScreen(context)
           ? Row(
               children: [
@@ -24,26 +26,29 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
       elevation: 0,
       title: Row(
         children: [
-          Visibility(
-            child: CustomText(
-              text: "Dash",
-              color: lightGrey,
-              size: 20,
-              weight: FontWeight.bold,
+          const Visibility(
+            child: Text(
+              "Dashboard",
+              style: TextStyles.appBarTitleTextStyle,
             ),
           ),
+          // 空白の間を入れる
           Expanded(child: Container()),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              // 設定の処理を記述する
+            },
             icon: Icon(
               Icons.settings,
-              color: dark.withOpacity(.7),
+              color: CustomColor.dark.withOpacity(.7),
             ),
           ),
           Stack(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  // 通知の処理を記述する
+                },
                 icon: const Icon(Icons.notifications),
               ),
               Positioned(
@@ -54,10 +59,10 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
                   height: 12,
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
-                    color: active,
+                    color: CustomColor.active,
                     borderRadius: BorderRadius.circular(30),
                     border: Border.all(
-                      color: light,
+                      color: CustomColor.light,
                       width: 2,
                     ),
                   ),
@@ -68,38 +73,25 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           Container(
             width: 1,
             height: 22,
-            color: lightGrey,
-            child: SizedBox.shrink(),
+            color: CustomColor.lightGrey,
+            child: const SizedBox.shrink(),
           ),
           const SizedBox(
             width: 24,
           ),
-          CustomText(
-            text: "Santos Enoque",
-            color: lightGrey,
+          Text(
+            userState.name,
+            style: TextStyles.appBarUserNameTextStyle,
           ),
           const SizedBox(
             width: 16,
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Container(
-              padding: const EdgeInsets.all(2),
-              margin: const EdgeInsets.all(2),
-              child: CircleAvatar(
-                backgroundColor: light,
-                child: Icon(
-                  Icons.person_outline,
-                  color: dark,
-                ),
-              ),
-            ),
+          CircleAvatar(
+            backgroundColor: CustomColor.light,
+            backgroundImage: AssetImage(userState.imageUrl),
           ),
         ],
       ),
-      iconTheme: IconThemeData(color: dark),
+      iconTheme: IconThemeData(color: CustomColor.dark),
       backgroundColor: Colors.transparent,
     );

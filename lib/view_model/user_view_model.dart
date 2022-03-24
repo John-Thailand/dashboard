@@ -11,11 +11,10 @@ class UserViewModel extends StateNotifier<User> {
   UserViewModel(
     this._repository,
   ) : super(
-          User(
+          const User(
             name: 'Naoki Honda',
             email: 'hamoban69@gmail.com',
-            imageUrl:
-                'https://pbs.twimg.com/profile_images/885510796691689473/rR9aWvBQ_400x400.jpg',
+            imageUrl: 'assets/images/person.jpeg',
           ),
         );
 
@@ -32,7 +31,7 @@ class UserViewModel extends StateNotifier<User> {
 
   //   _isLoading = true;
 
-  //   final articles = await repository.fetchArticles(_page, state.keyword);
+  //   final articles = await _repository.fetchArticles(_page, state.keyword);
   //   final newArticles = [...state.articles, ...articles];
 
   //   if (articles.length % 20 != 0 || articles.length == 0) {
