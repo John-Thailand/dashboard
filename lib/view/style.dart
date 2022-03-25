@@ -25,7 +25,7 @@ class TextStyles {
   /// サイドメニュー
   // サイドメニューアイテム
   static const sideMenuItemTextStyle = TextStyle(
-    fontSize: 16.0,
+    // fontSize: 16.0,
     fontWeight: FontWeight.bold,
     color: Colors.grey,
   );

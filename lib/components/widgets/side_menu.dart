@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dashboard/helpers/responsiveness.dart';
 import 'package:dashboard/view/style.dart';
 import 'package:dashboard/view_model/user_view_model.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +19,7 @@ class SideMenu extends HookConsumerWidget {
     final userState = ref.watch(userViewModel.notifier).state;
 
     return isDrawerMenu
+        // ドロワーメニューの場合
         ? ListView(
             children: <Widget>[
               // Solution: ContainerによってDrawerHeaderの高さを設定
@@ -72,6 +75,7 @@ class SideMenu extends HookConsumerWidget {
               ),
             ],
           )
+        // サイドメニューの場合
         : ListView(
             children: <Widget>[
               // Solution: ContainerによってDrawerHeaderの高さを設定
@@ -80,13 +84,17 @@ class SideMenu extends HookConsumerWidget {
                 color: Colors.blue,
                 child: DrawerHeader(
                   child: UserAccountsDrawerHeader(
-                    accountName: Text(
+                    accountName: AutoSizeText(
                       userState.name,
-                      style: TextStyles.sideMenuUserNameTextStyle,
+                      presetFontSizes: const [16, 15, 14, 13, 12, 11, 10],
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    accountEmail: Text(
+                    accountEmail: AutoSizeText(
                       userState.email,
-                      style: TextStyles.sideMenuUserEmailTextStyle,
+                      presetFontSizes: const [14, 13, 12, 11, 10],
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     currentAccountPicture: CircleAvatar(
                       backgroundColor: Colors.white,
@@ -96,8 +104,11 @@ class SideMenu extends HookConsumerWidget {
                 ),
               ),
               ListTile(
-                title: const Text(
+                title: const AutoSizeText(
                   "Introduction",
+                  presetFontSizes: [16, 15, 14, 13, 12, 11, 10],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyles.sideMenuItemTextStyle,
                 ),
                 leading: const Icon(Icons.person),
@@ -106,8 +117,11 @@ class SideMenu extends HookConsumerWidget {
                 },
               ),
               ListTile(
-                title: const Text(
+                title: const AutoSizeText(
                   "Blog",
+                  presetFontSizes: [16, 15, 14, 13, 12, 11, 10],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyles.sideMenuItemTextStyle,
                 ),
                 leading: const Icon(Icons.chat),
@@ -116,8 +130,11 @@ class SideMenu extends HookConsumerWidget {
                 },
               ),
               ListTile(
-                title: const Text(
+                title: const AutoSizeText(
                   "Contact",
+                  presetFontSizes: [16, 15, 14, 13, 12, 11, 10],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyles.sideMenuItemTextStyle,
                 ),
                 leading: const Icon(Icons.contact_mail),
@@ -126,8 +143,11 @@ class SideMenu extends HookConsumerWidget {
                 },
               ),
               ListTile(
-                title: const Text(
+                title: const AutoSizeText(
                   "Contact",
+                  presetFontSizes: [16, 15, 14, 13, 12, 11, 10],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyles.sideMenuItemTextStyle,
                 ),
                 leading: const Icon(Icons.contact_mail),
