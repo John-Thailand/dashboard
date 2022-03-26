@@ -1,4 +1,4 @@
-import 'package:dashboard/components/widgets/side_menu.dart';
+import 'package:dashboard/components/widgets/side_menu/side_menu.dart';
 import 'package:flutter/material.dart';
 
 class LargeScreen extends StatelessWidget {

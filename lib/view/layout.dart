@@ -1,12 +1,12 @@
 import 'package:dashboard/helpers/responsiveness.dart';
-import 'package:dashboard/components/widgets/side_menu.dart';
-import 'package:dashboard/components/widgets/small_screen.dart';
+import 'package:dashboard/components/widgets/side_menu/side_menu.dart';
+import 'package:dashboard/components/widgets/screen/small_screen.dart';
 import 'package:dashboard/components/widgets/top_nav.dart';
 import 'package:dashboard/view_model/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../components/widgets/large_screen.dart';
+import '../components/widgets/screen/large_screen.dart';
 
 class SiteLayout extends HookConsumerWidget {
   const SiteLayout({Key? key}) : super(key: key);
