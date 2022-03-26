@@ -26,7 +26,7 @@ class SideMenuHeader extends HookConsumerWidget {
           accountEmail: AutoSizeText(
             userState.email,
             presetFontSizes: const [14, 13, 12, 11, 10],
-            maxLines: 1,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
           currentAccountPicture: CircleAvatar(
