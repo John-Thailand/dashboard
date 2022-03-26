@@ -1,5 +1,5 @@
 import 'package:dashboard/components/widgets/side_menu/horizontal/horizontai_side_menu.dart';
-import 'package:dashboard/components/widgets/side_menu/vertical/vertical_side_menu.dart';
+import 'package:dashboard/components/widgets/side_menu/vertical_side_menu.dart';
 import 'package:dashboard/helpers/responsiveness.dart';
 import 'package:flutter/material.dart';
 
