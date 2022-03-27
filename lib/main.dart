@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
         // アプリの基本色になります。
         primaryColor: Colors.blue,
       ),
+      // レイアウト
       home: const SiteLayout(),
     );
   }
