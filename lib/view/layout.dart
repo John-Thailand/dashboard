@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../components/widgets/screen/large_screen.dart';
 
+// サイトレイアウト
 class SiteLayout extends HookConsumerWidget {
   const SiteLayout({Key? key}) : super(key: key);
 
