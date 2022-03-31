@@ -38,4 +38,12 @@ class TextStyles {
   static const sideMenuUserEmailTextStyle = TextStyle(
     fontSize: 14.0,
   );
+
+  /// Introduction
+  // 名前
+  static const introductionNameTextStyle = TextStyle(
+    color: Colors.black,
+    fontSize: 24.0,
+    fontWeight: FontWeight.w600,
+  );
 }

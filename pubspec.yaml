@@ -42,6 +42,7 @@ dependencies:
   freezed_annotation: ^1.1.0
   json_annotation: ^4.4.0
   auto_size_text: ^3.0.0
+  font_awesome_flutter: ^10.1.0
 
 dev_dependencies:
   flutter_test:
