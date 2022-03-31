@@ -1,5 +1,7 @@
 import 'package:dashboard/components/widgets/side_menu/side_menu.dart';
 import 'package:dashboard/view_model/user_view_model.dart';
+import 'package:dashboard/utility/common.dart' as common;
+
 import 'package:flutter/material.dart';
 import 'package:dashboard/view/style.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -44,22 +46,25 @@ class LargeScreen extends HookConsumerWidget {
                   children: [
                     IconButton(
                       icon: const FaIcon(FontAwesomeIcons.github),
-                      onPressed: () {
+                      onPressed: () async {
                         // Githubへ遷移
+                        await common.launchUrl(userState.githubUrl);
                       },
                     ),
                     SizedBox(width: MediaQuery.of(context).size.width / 120),
                     IconButton(
                       icon: const FaIcon(FontAwesomeIcons.twitter),
-                      onPressed: () {
+                      onPressed: () async {
                         // Twitterへ遷移
+                        await common.launchUrl(userState.twitterUrl);
                       },
                     ),
                     SizedBox(width: MediaQuery.of(context).size.width / 120),
                     IconButton(
                       icon: const FaIcon(FontAwesomeIcons.instagram),
-                      onPressed: () {
+                      onPressed: () async {
                         // instagramへ遷移
+                        await common.launchUrl(userState.instagramUrl);
                       },
                     ),
                   ],
