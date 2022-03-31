@@ -23,11 +23,19 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {required String name, required String email, required String imageUrl}) {
+      {required String name,
+      required String email,
+      required String imageUrl,
+      required String githubUrl,
+      required String twitterUrl,
+      required String instagramUrl}) {
     return _User(
       name: name,
       email: email,
       imageUrl: imageUrl,
+      githubUrl: githubUrl,
+      twitterUrl: twitterUrl,
+      instagramUrl: instagramUrl,
     );
   }
 
@@ -44,6 +52,9 @@ mixin _$User {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
+  String get githubUrl => throw _privateConstructorUsedError;
+  String get twitterUrl => throw _privateConstructorUsedError;
+  String get instagramUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +65,13 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({String name, String email, String imageUrl});
+  $Res call(
+      {String name,
+      String email,
+      String imageUrl,
+      String githubUrl,
+      String twitterUrl,
+      String instagramUrl});
 }
 
 /// @nodoc
@@ -70,6 +87,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? name = freezed,
     Object? email = freezed,
     Object? imageUrl = freezed,
+    Object? githubUrl = freezed,
+    Object? twitterUrl = freezed,
+    Object? instagramUrl = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed
@@ -84,6 +104,18 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      githubUrl: githubUrl == freezed
+          ? _value.githubUrl
+          : githubUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      twitterUrl: twitterUrl == freezed
+          ? _value.twitterUrl
+          : twitterUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      instagramUrl: instagramUrl == freezed
+          ? _value.instagramUrl
+          : instagramUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -93,7 +125,13 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String email, String imageUrl});
+  $Res call(
+      {String name,
+      String email,
+      String imageUrl,
+      String githubUrl,
+      String twitterUrl,
+      String instagramUrl});
 }
 
 /// @nodoc
@@ -110,6 +148,9 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? name = freezed,
     Object? email = freezed,
     Object? imageUrl = freezed,
+    Object? githubUrl = freezed,
+    Object? twitterUrl = freezed,
+    Object? instagramUrl = freezed,
   }) {
     return _then(_User(
       name: name == freezed
@@ -124,6 +165,18 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      githubUrl: githubUrl == freezed
+          ? _value.githubUrl
+          : githubUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      twitterUrl: twitterUrl == freezed
+          ? _value.twitterUrl
+          : twitterUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      instagramUrl: instagramUrl == freezed
+          ? _value.instagramUrl
+          : instagramUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -132,7 +185,12 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_User with DiagnosticableTreeMixin implements _User {
   const _$_User(
-      {required this.name, required this.email, required this.imageUrl});
+      {required this.name,
+      required this.email,
+      required this.imageUrl,
+      required this.githubUrl,
+      required this.twitterUrl,
+      required this.instagramUrl});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -142,10 +200,16 @@ class _$_User with DiagnosticableTreeMixin implements _User {
   final String email;
   @override
   final String imageUrl;
+  @override
+  final String githubUrl;
+  @override
+  final String twitterUrl;
+  @override
+  final String instagramUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(name: $name, email: $email, imageUrl: $imageUrl)';
+    return 'User(name: $name, email: $email, imageUrl: $imageUrl, githubUrl: $githubUrl, twitterUrl: $twitterUrl, instagramUrl: $instagramUrl)';
   }
 
   @override
@@ -155,7 +219,10 @@ class _$_User with DiagnosticableTreeMixin implements _User {
       ..add(DiagnosticsProperty('type', 'User'))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('imageUrl', imageUrl));
+      ..add(DiagnosticsProperty('imageUrl', imageUrl))
+      ..add(DiagnosticsProperty('githubUrl', githubUrl))
+      ..add(DiagnosticsProperty('twitterUrl', twitterUrl))
+      ..add(DiagnosticsProperty('instagramUrl', instagramUrl));
   }
 
   @override
@@ -165,7 +232,12 @@ class _$_User with DiagnosticableTreeMixin implements _User {
             other is _User &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.imageUrl, imageUrl));
+            const DeepCollectionEquality().equals(other.imageUrl, imageUrl) &&
+            const DeepCollectionEquality().equals(other.githubUrl, githubUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.twitterUrl, twitterUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.instagramUrl, instagramUrl));
   }
 
   @override
@@ -173,7 +245,10 @@ class _$_User with DiagnosticableTreeMixin implements _User {
       runtimeType,
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(imageUrl));
+      const DeepCollectionEquality().hash(imageUrl),
+      const DeepCollectionEquality().hash(githubUrl),
+      const DeepCollectionEquality().hash(twitterUrl),
+      const DeepCollectionEquality().hash(instagramUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -190,7 +265,10 @@ abstract class _User implements User {
   const factory _User(
       {required String name,
       required String email,
-      required String imageUrl}) = _$_User;
+      required String imageUrl,
+      required String githubUrl,
+      required String twitterUrl,
+      required String instagramUrl}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -200,6 +278,12 @@ abstract class _User implements User {
   String get email;
   @override
   String get imageUrl;
+  @override
+  String get githubUrl;
+  @override
+  String get twitterUrl;
+  @override
+  String get instagramUrl;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

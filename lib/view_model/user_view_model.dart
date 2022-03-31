@@ -15,6 +15,9 @@ class UserViewModel extends StateNotifier<User> {
             name: 'Naoki Honda',
             email: 'hamoban69@gmail.com',
             imageUrl: 'assets/images/person.jpeg',
+            githubUrl: 'https://github.com/John-Thailand',
+            twitterUrl: 'https://twitter.com/Mukkun_69n',
+            instagramUrl: 'https://www.instagram.com/mukku69bass',
           ),
         );
 
